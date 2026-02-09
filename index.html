@@ -12,87 +12,144 @@
   gtag('config', 'G-ZRWDN6JM8W');
 </script>
 	
+	
     <meta charset="UTF-8">
-    <title>Ryan Tate Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Fade-In Auto-Play Layout</title>
     <style>
-        html, body {
+        /* --- ADJUSTABLE VARIABLES --- */
+        :root {
+            --logo-width: 115px;
+            --logo-top-margin: 30px;
+            
+            --banner-max-width: 970px;
+            --banner-aspect-ratio: 970 / 474;
+            --banner-to-logo-distance: 40px;
+            
+            --text-width-percent: 100%; 
+            --main-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            
+            --total-duration: 12s; /* Total time for one full cycle */
+        }
+
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
+            font-family: var(--main-font);
+            display: flex;
+            justify-content: center; 
         }
 
         .page-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Reference width container */
-        .content {
+            width: 95%; 
+            max-width: var(--banner-max-width);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 300px;          /* logo width */
-            max-width: 90vw;       /* responsive safety */
-            text-align: center;
+            align-items: flex-start;
         }
 
-        /* Clickable logo */
-        .logo-link img {
-            width: 100%;
+        /* Clickable Logo */
+        .logo-link {
+            display: inline-block;
+            margin-top: var(--logo-top-margin);
+            z-index: 10;
+        }
+
+        .logo {
+            width: var(--logo-width);
             height: auto;
             display: block;
         }
 
-        /* Paragraph text */
-        .description {
-            margin-top: 50px;      /* distance below logo */
-            width: 85%;            /* 90% of logo width */
-			text-align: justify;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                         "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 12px;
-            line-height: 1.6;
-            color: #333333;
+        /* Fading Banner Section */
+        .banner-fade-container {
+            width: 100%;
+            margin-top: var(--banner-to-logo-distance);
+            aspect-ratio: var(--banner-aspect-ratio);
+            position: relative; /* Allows images to stack */
+            overflow: hidden;
         }
 
-
-
+        .banner-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Hide by default */
+            animation: fade-animation var(--total-duration) infinite ease-in-out;
         }
-	
-        .logo-link:hover {
-            opacity: 0.9;
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+
+        /* Animation Delays (Total Duration / Number of Slides) */
+        .banner-link:nth-child(1) { animation-delay: 0s; }
+        .banner-link:nth-child(2) { animation-delay: 4s; }
+        .banner-link:nth-child(3) { animation-delay: 8s; }
+
+        /* Fade Logic: 
+           Visible for ~33% of the time, fades in/out during the gaps */
+        @keyframes fade-animation {
+            0%   { opacity: 0; }
+            10%  { opacity: 1; } /* Fade In */
+            33%  { opacity: 1; } /* Stay Visible */
+            43%  { opacity: 0; } /* Fade Out */
+            100% { opacity: 0; }
+        }
+
+        /* Text Content */
+        .content-area {
+            width: var(--text-width-percent);
+            margin-top: 20px;
+            margin-bottom: 60px;
+            text-align: justify;
+            line-height: 1.8;
+            color: #2d2d2d;
+        }
+
+        /* Mobile specific tweaks */
+        @media (max-width: 600px) {
+            :root {
+                --logo-width: 130px;
+                --text-width-percent: 100%;
+            }
         }
     </style>
 </head>
-
 <body>
+
     <div class="page-wrapper">
-        <div class="content">
+        <a href="https://linkedin.com/in/ryantate7" class="logo-link">
+            <img src="logohr.png?text=LOGO" alt="Logo" class="logo">
+        </a>
 
-            <a class="logo-link"
-               href="https://www.linkedin.com/in/ryantate7"
-               target="_blank"
-               rel="noopener noreferrer">
-                <img src="logohr.png" alt="Company Logo">
+        <div class="banner-fade-container">
+            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
+            <img src="banner_bus_1.png?text=Slide+1+Fade" alt="Banner 1" class="banner-image">
             </a>
+            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
+            <img src="banner_bus_2.png?text=Slide+2+Fade" alt="Banner 2" class="banner-image">
+            </a>
+            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
+            <img src="banner_bus_3.png?text=Slide+3+Fade" alt="Banner 3" class="banner-image">
+            </a>
+      </div>
 
-            <p class="description">
-                Delivering creative excellence aligned with business needs.<br>
-                
+        <article class="content-area">
+            <p>
+                Delivering creative excellence aligned with business needs. Product | Environments | Automotive
             </p>
+            <p>
+                A multidisciplinary design leader with 20 years global experience working alongside cross-functional teams. Fusing physical and digital realms to deliver exceptional experiences, products, and services. 
+            </p>
+        </article>
+</div>
 
-			<p class="description">
-				A multidisciplinary design leader with 20 years global experience working alongside cross-functional teams. Fusing physical and digital realms to deliver exceptional experiences, products, and services. Product | Environment | Automotive
-			</p>
-			
-        </div>
-    </div>
 </body>
 </html>

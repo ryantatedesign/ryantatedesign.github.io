@@ -2,57 +2,128 @@
 <html lang="en">
 <head>
 
-	<link rel="icon" type="image/png" href="/favicon.png">
-	
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRWDN6JM8W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-  gtag('config', 'G-ZRWDN6JM8W');
-</script>
-	
-	
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRWDN6JM8W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZRWDN6JM8W');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Ryan Tate Design</title>
+
     <style>
-        /* --- ADJUSTABLE VARIABLES --- */
+
+        /* ========================================
+           ADJUSTABLE VARIABLES
+           ======================================== */
+
         :root {
+
+            /* ------------------------------------
+               LOGO
+               ------------------------------------ */
+
             --logo-width: 115px;
             --logo-top-margin: 30px;
-            
+
+
+            /* ------------------------------------
+               BANNER
+               ------------------------------------ */
+
             --banner-max-width: 970px;
             --banner-aspect-ratio: 970 / 474;
             --banner-to-logo-distance: 40px;
-            
-            --text-width-percent: 100%; 
-            --main-font: open-sans, sans-serif;
-            
-            --total-duration: 12s; /* Total time for one full cycle */
+
+
+            /* ------------------------------------
+               MAIN BODY TEXT
+               ------------------------------------ */
+
+            --text-width-percent: 100%;
+            --text-font-size: 16px;
+            --text-font-weight: 400;
+            --text-line-height: 1.5;
+            --text-colour: #333333;
+
+
+            /* ------------------------------------
+               FIRST / INTRODUCTORY PARAGRAPH
+               ------------------------------------ */
+
+            --intro-font-size: 18px;
+            --intro-font-weight: 500;
+            --intro-line-height: 1.5;
+            --intro-colour: #333333;
+
+
+            /* ------------------------------------
+               FONT
+               ------------------------------------ */
+
+            --main-font:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+
+            /* ------------------------------------
+               BANNER ANIMATION
+               ------------------------------------ */
+
+            --total-duration: 12s;
         }
 
+
+        /* ========================================
+           PAGE
+           ======================================== */
+
+        html,
         body {
             margin: 0;
             padding: 0;
-            font-family: var(--main-font);
-            display: flex;
-            justify-content: center; 
+            width: 100%;
+            background-color: #ffffff;
         }
 
+        body {
+            font-family: var(--main-font);
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* ========================================
+           MAIN PAGE WRAPPER
+           ======================================== */
+
         .page-wrapper {
-            width: 95%; 
+            width: 95%;
             max-width: var(--banner-max-width);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-        /* Clickable Logo */
+
+        /* ========================================
+           CLICKABLE LOGO
+           ======================================== */
+
         .logo-link {
-            display: in-block;
+            display: inline-block;
             margin-top: var(--logo-top-margin);
             z-index: 10;
         }
@@ -63,12 +134,20 @@
             display: block;
         }
 
-        /* Fading Banner Section */
+        .logo-link:hover {
+            opacity: 0.9;
+        }
+
+
+        /* ========================================
+           FADING BANNER
+           ======================================== */
+
         .banner-fade-container {
             width: 100%;
             margin-top: var(--banner-to-logo-distance);
             aspect-ratio: var(--banner-aspect-ratio);
-            position: relative; /* Allows images to stack */
+            position: relative;
             overflow: hidden;
         }
 
@@ -78,7 +157,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0; /* Hide by default */
+            opacity: 0;
             animation: fade-animation var(--total-duration) infinite ease-in-out;
         }
 
@@ -90,68 +169,228 @@
             display: block;
         }
 
-        /* Animation Delays (Total Duration / Number of Slides) */
-        .banner-link:nth-child(1) { animation-delay: 0s; }
-        .banner-link:nth-child(2) { animation-delay: 4s; }
-        .banner-link:nth-child(3) { animation-delay: 8s; }
 
-        /* Fade Logic: 
-           Visible for ~33% of the time, fades in/out during the gaps */
-        @keyframes fade-animation {
-            0%   { opacity: 0; }
-            10%  { opacity: 1; } /* Fade In */
-            33%  { opacity: 1; } /* Stay Visible */
-            43%  { opacity: 0; } /* Fade Out */
-            100% { opacity: 0; }
+        /* ========================================
+           BANNER TIMING
+           ======================================== */
+
+        .banner-link:nth-child(1) {
+            animation-delay: 0s;
         }
 
-        /* Text Content */
+        .banner-link:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .banner-link:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+
+        /* ========================================
+           FADE ANIMATION
+           ======================================== */
+
+        @keyframes fade-animation {
+
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 1;
+            }
+
+            43% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+        /* ========================================
+           TEXT CONTENT
+           ======================================== */
+
         .content-area {
             width: var(--text-width-percent);
             margin-top: 20px;
             margin-bottom: 60px;
+
+            font-family: var(--main-font);
+            font-size: var(--text-font-size);
+            font-weight: var(--text-font-weight);
+            line-height: var(--text-line-height);
+
             text-align: justify;
-            line-height: 1.5;
-            color: #333333;
+            color: var(--text-colour);
         }
 
-        /* Mobile specific tweaks */
+
+        /* ----------------------------------------
+           Paragraph spacing
+           ---------------------------------------- */
+
+        .content-area p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+
+        /* ----------------------------------------
+           FIRST / INTRODUCTORY PARAGRAPH
+           ---------------------------------------- */
+
+        .content-area .intro {
+            font-size: var(--intro-font-size);
+            font-weight: var(--intro-font-weight);
+            line-height: var(--intro-line-height);
+            color: var(--intro-colour);
+        }
+
+
+        /* ========================================
+           MOBILE
+           ======================================== */
+
         @media (max-width: 600px) {
+
             :root {
+
                 --logo-width: 130px;
+
                 --text-width-percent: 100%;
+
+                --text-font-size: 15px;
+
+                --intro-font-size: 17px;
+            }
+
+            .page-wrapper {
+                width: 90%;
             }
         }
+
     </style>
+
 </head>
+
+
 <body>
 
     <div class="page-wrapper">
-        <a href="https://linkedin.com/in/ryantate7" class="logo-link">
-            <img src="logohr.png?text=LOGO" alt="Logo" class="logo">
+
+
+        <!-- ====================================
+             CLICKABLE LOGO
+             ==================================== -->
+
+        <a
+            href="https://linkedin.com/in/ryantate7"
+            class="logo-link"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img
+                src="logohr.png"
+                alt="Ryan Tate Design"
+                class="logo"
+            >
         </a>
 
+
+        <!-- ====================================
+             FADING BANNER
+             ==================================== -->
+
         <div class="banner-fade-container">
-            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
-            <img src="banner_bus_1.jpg?text=Slide+1+Fade" alt="Banner 1" class="banner-image">
+
+
+            <!-- Banner 1 -->
+
+            <a
+                href="https://linkedin.com/in/ryantate7"
+                class="banner-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="banner_bus_1.jpg"
+                    alt="Design project"
+                    class="banner-image"
+                >
             </a>
-            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
-            <img src="banner_bus_2j.jpg?text=Slide+2+Fade" alt="Banner 2" class="banner-image">
+
+
+            <!-- Banner 2 -->
+
+            <a
+                href="https://linkedin.com/in/ryantate7"
+                class="banner-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="banner_bus_2j.jpg"
+                    alt="Design project"
+                    class="banner-image"
+                >
             </a>
-            <a href="https://linkedin.com/in/ryantate7" class="banner-link">
-            <img src="banner_bus_3.jpg?text=Slide+3+Fade" alt="Banner 3" class="banner-image">
+
+
+            <!-- Banner 3 -->
+
+            <a
+                href="https://linkedin.com/in/ryantate7"
+                class="banner-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="banner_bus_3.jpg"
+                    alt="Design project"
+                    class="banner-image"
+                >
             </a>
-      </div>
+
+        </div>
+
+
+        <!-- ====================================
+             TEXT CONTENT
+             ==================================== -->
 
         <article class="content-area">
-            <p>
-                Turning business ambition into meaningful outcomes through design |  Product  |  Environments  |  Mobility  |  
+
+
+            <!-- Introductory paragraph -->
+
+            <p class="intro">
+                Turning business ambition into meaningful outcomes through design
+                | Product | Environments | Mobility |
             </p>
+
+
+            <!-- Main body -->
+
             <p>
-                With over 20 years of global experience, I build teams, shape vision, and translate complex challenges into differentiated products, services, and experiences. 
+                With over 20 years of global experience, I build teams, shape
+                vision, and translate complex challenges into differentiated
+                products, services, and experiences.
             </p>
+
+
         </article>
-</div>
+
+
+    </div>
 
 </body>
 </html>

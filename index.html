@@ -75,6 +75,15 @@
 
 
             /* ------------------------------------
+               "PRODUCT | ENVIRONMENTS | MOBILITY" LINE
+               ------------------------------------ */
+
+            --tagline-font-size: 24px;
+            --tagline-font-weight: 150;
+            --tagline-colour: #777777;
+
+
+            /* ------------------------------------
                FONT
                ------------------------------------ */
 
@@ -283,6 +292,17 @@
         }
 
 
+        /* ----------------------------------------
+           "PRODUCT | ENVIRONMENTS | MOBILITY" LINE
+           ---------------------------------------- */
+
+        .content-area .tagline {
+            font-size: var(--tagline-font-size);
+            font-weight: var(--tagline-font-weight);
+            color: var(--tagline-colour);
+        }
+
+
         /* ========================================
            MOBILE
            ======================================== */
@@ -302,6 +322,8 @@
                 --link-font-size: 18px;
                 --link-colour: #0077cc;
                 --link-hover-colour: #0077cc;
+
+                --tagline-font-size: 18px;
             }
 
             .page-wrapper {
@@ -407,8 +429,7 @@
                 Turning business ambition into results through design
                 
             </p>
- <p>            | Product | Environments | Mobility |
-</p>
+ <p class="tagline">| Product | Environments | Mobility |</p>
             <!-- Main body -->
 
             <p>

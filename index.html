@@ -65,6 +65,16 @@
 
 
             /* ------------------------------------
+               LINKS
+               ------------------------------------ */
+
+            --link-font-size: inherit;
+            --link-font-weight: inherit;
+            --link-colour: #0077cc;
+            --link-hover-colour: #0077cc;
+
+
+            /* ------------------------------------
                FONT
                ------------------------------------ */
 
@@ -253,15 +263,24 @@
             font-weight: var(--intro-font-weight);
             line-height: var(--intro-line-height);
             color: var(--intro-colour);
-       .content-area a {
-    color: #0077cc;
-    text-decoration: none;
-}
+        }
 
-.content-area a:hover {
-    color: #0077cc;
-    text-decoration: underline;
- }
+
+        /* ----------------------------------------
+           LINKS (e.g. LinkedIn link)
+           ---------------------------------------- */
+
+        .content-area a {
+            font-size: var(--link-font-size);
+            font-weight: var(--link-font-weight);
+            color: var(--link-colour);
+            text-decoration: none;
+        }
+
+        .content-area a:hover {
+            color: var(--link-hover-colour);
+            text-decoration: underline;
+        }
 
 
         /* ========================================
@@ -279,6 +298,10 @@
                 --text-font-size: 20px;
 
                 --intro-font-size: 22px;
+
+                --link-font-size: 18px;
+                --link-colour: #0077cc;
+                --link-hover-colour: #0077cc;
             }
 
             .page-wrapper {

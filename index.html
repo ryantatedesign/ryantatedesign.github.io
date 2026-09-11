@@ -67,10 +67,9 @@
                link font
                ------------------------------------ */
 
-                .content-area .intro a {
-                color: var(--link-colour);
-                font-size: var(--link-font-size);
-                font-weight: var(--link-font-weight);
+            --link-font-size: 18px;
+            --link-font-weight: 600;
+            --link-colour: #0077cc;
 
             
             /* ------------------------------------
@@ -271,6 +270,21 @@
             font-weight: var(--intro-font-weight);
             line-height: var(--intro-line-height);
             color: var(--intro-colour);
+        }
+
+        /* ----------------------------------------
+           INTRO LINK
+           ---------------------------------------- */
+
+        .content-area .intro a {
+            color: var(--link-colour);
+            font-size: var(--link-font-size);
+            font-weight: var(--link-font-weight);
+            text-decoration: none;
+        }
+
+        .content-area .intro a:hover {
+            text-decoration: underline;
         }
 
 

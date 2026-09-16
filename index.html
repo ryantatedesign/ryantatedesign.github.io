@@ -41,6 +41,7 @@
             --banner-max-width: 970px;
             --banner-aspect-ratio: 970 / 474;
             --banner-to-logo-distance: 40px;
+            --static-banner-to-previous-distance: 40px;
 
 
             /* ------------------------------------
@@ -51,7 +52,7 @@
             --text-font-size: 24px;
             --text-font-weight: 150;
             --text-line-height: 1.2;
-            --text-colour: #181818;
+            --text-colour: #777777;
 
 
             /* ------------------------------------
@@ -78,9 +79,20 @@
                "PRODUCT | ENVIRONMENTS | MOBILITY" LINE
                ------------------------------------ */
 
-            --tagline-font-size: 28px;
-            --tagline-font-weight: 400;
-            --tagline-colour: #a0a0a0;
+            --tagline-font-size: 24px;
+            --tagline-font-weight: 150;
+            --tagline-colour: #777777;
+
+
+            /* ------------------------------------
+               FOOTER TEXT LINE
+               ------------------------------------ */
+
+            --footer-text-width-percent: 100%;
+            --footer-text-font-size: 16px;
+            --footer-text-colour: #777777;
+            --footer-text-margin-top: 20px;
+            --footer-text-margin-bottom: 40px;
 
 
             /* ------------------------------------
@@ -101,7 +113,7 @@
                BANNER ANIMATION
                ------------------------------------ */
 
-            --total-duration: 24s;
+            --total-duration: 12s;
         }
 
 
@@ -204,16 +216,6 @@
         .banner-link:nth-child(3) {
             animation-delay: 8s;
         }
-         .banner-link:nth-child(4) {
-            animation-delay: 12s;
-             
-        } .banner-link:nth-child(5) {
-            animation-delay: 16s;
-             
-        } .banner-link:nth-child(6) {
-            animation-delay: 20s;
-             
-        }
 
 
         /* ========================================
@@ -222,25 +224,70 @@
 
         @keyframes fade-animation {
 
-           0% {
-        opacity: 0;
-    }
+            0% {
+                opacity: 0;
+            }
 
-    5% {
-        opacity: 1;
-    }
+            10% {
+                opacity: 1;
+            }
 
-    16.5% {
-        opacity: 1;
-    }
+            33% {
+                opacity: 1;
+            }
 
-    21.5% {
-        opacity: 0;
-    }
+            43% {
+                opacity: 0;
+            }
 
-    100% {
-        opacity: 0;
-    }
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+        /* ========================================
+           STATIC BANNER
+           ======================================== */
+
+        .banner-static-container {
+            width: 100%;
+            margin-top: var(--static-banner-to-previous-distance);
+            aspect-ratio: var(--banner-aspect-ratio);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-static-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .banner-static-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+
+
+        /* ========================================
+           FOOTER TEXT LINE
+           ======================================== */
+
+        .footer-text {
+            width: var(--footer-text-width-percent);
+            margin-top: var(--footer-text-margin-top);
+            margin-bottom: var(--footer-text-margin-bottom);
+            font-family: var(--main-font);
+            font-size: var(--footer-text-font-size);
+            color: var(--footer-text-colour);
+            text-align: left;
         }
 
 
@@ -326,18 +373,21 @@
                 --text-width-percent: 100%;
 
                 --text-font-size: 20px;
-                --text-colour: #c20c0c;
 
                 --intro-font-size: 22px;
-                --intro-font-weight: 600;
 
-                --link-font-size: 20px;
+                --link-font-size: 18px;
                 --link-colour: #0077cc;
                 --link-hover-colour: #0077cc;
 
-                --tagline-font-size: 22px;
-                --tagline-font-weight: 400;
-                --tagline-colour: ##a0a0a0;
+                --tagline-font-size: 18px;
+                --tagline-font-weight: 150;
+                --tagline-colour: #777777;
+
+                --footer-text-font-size: 14px;
+                --footer-text-width-percent: 100%;
+                --footer-text-margin-top: 15px;
+                --footer-text-margin-bottom: 30px;
             }
 
             .page-wrapper {
@@ -427,49 +477,6 @@
                 >
             </a>
 
-            <!-- Banner 4 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_bus_4.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-             <!-- Banner orion 1 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_orion_1b.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-              <!-- Banner orion 2 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_orion_2b.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-            
         </div>
 
 
@@ -486,7 +493,7 @@
                 Turning business ambition into results through design
                 
             </p>
- <p class="tagline">Product | Environments | Mobility</p>
+ <p class="tagline">| Product | Environments | Mobility |</p>
             <!-- Main body -->
 
             <p>
@@ -502,6 +509,37 @@
                 Get in touch to explore how I can help. <a href="https://linkedin.com/in/ryantate7" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </p>
         </article>
+
+
+        <!-- ====================================
+             STATIC BANNER (bottom of page)
+             ==================================== -->
+
+        <div class="banner-static-container">
+
+            <a
+                href="https://linkedin.com/in/ryantate7"
+                class="banner-static-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="banner_static.jpg"
+                    alt="Design project"
+                    class="banner-static-image"
+                >
+            </a>
+
+        </div>
+
+
+        <!-- ====================================
+             FOOTER TEXT LINE
+             ==================================== -->
+
+        <p class="footer-text">
+            Add your footer text here
+        </p>
 
 
     </div>

@@ -4,8 +4,6 @@
 
     <link rel="icon" type="image/png" href="/favicon.png">
 
-   
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -33,8 +31,8 @@
 
             --banner-max-width: 970px;
             --banner-aspect-ratio: 970 / 474;
-            --banner-to-logo-distance: 30px;
-            --static-banner-to-previous-distance: 0px;
+            --banner-to-logo-distance: 40px;
+            --static-banner-to-previous-distance: 40px;
 
 
             /* ------------------------------------
@@ -73,7 +71,7 @@
                ------------------------------------ */
 
             --tagline-font-size: 28px;
-            --tagline-font-weight: 400;
+            --tagline-font-weight: 150;
             --tagline-colour: #777777;
 
 
@@ -84,8 +82,8 @@
             --footer-text-width-percent: 100%;
             --footer-text-font-size: 16px;
             --footer-text-colour: #777777;
-            --footer-text-margin-top: 5px;
-            --footer-text-margin-bottom: 10px;
+            --footer-text-margin-top: 20px;
+            --footer-text-margin-bottom: 40px;
 
 
             /* ------------------------------------
@@ -106,7 +104,7 @@
                BANNER ANIMATION
                ------------------------------------ */
 
-            --total-duration: 24s;
+            --total-duration: 12s;
         }
 
 
@@ -209,15 +207,6 @@
         .banner-link:nth-child(3) {
             animation-delay: 8s;
         }
-         .banner-link:nth-child(4) {
-            animation-delay: 12s;
-        }
-         .banner-link:nth-child(5) {
-            animation-delay: 16s;
-        }
-         .banner-link:nth-child(6) {
-            animation-delay: 20s;
-        }
 
 
         /* ========================================
@@ -226,58 +215,41 @@
 
         @keyframes fade-animation {
 
-             0% {
-        opacity: 0;
-    }
+            0% {
+                opacity: 0;
+            }
 
-    5% {
-        opacity: 1;
-    }
+            10% {
+                opacity: 1;
+            }
 
-    16.66% {
-        opacity: 1;
-    }
+            33% {
+                opacity: 1;
+            }
 
-    21.66% {
-        opacity: 0;
-    }
+            43% {
+                opacity: 0;
+            }
 
-    100% {
-        opacity: 0;
-    
+            100% {
+                opacity: 0;
             }
         }
 
 
         /* ========================================
            STATIC BANNER
-            ======================================== */
+           ======================================== */
 
-        .banner-static-container {
-        width: 100%;
-        margin-top: var(--static-banner-to-previous-distance);
-        }
-
-        .banner-static-link {
-        display: block;
-        width: 100%;
-        }
-
-        .banner-companies-image {
-        width: 100%;
-        height: auto;
-        display: block;
-
-  /* 
         .banner-static-container {
             width: 100%;
             margin-top: var(--static-banner-to-previous-distance);
-           aspect-ratio: var(--banner-aspect-ratio);
+            aspect-ratio: var(--banner-aspect-ratio);
             position: relative;
             overflow: hidden;
         }
 
-        .banner-static-link {
+        .banner-companies {
             position: absolute;
             top: 0;
             left: 0;
@@ -288,11 +260,10 @@
 
         .banner-companies-image {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
             border-radius: 0;
             display: block;
-*/
         }
 
 
@@ -317,8 +288,8 @@
 
         .content-area {
             width: var(--text-width-percent);
-            margin-top: 10px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 60px;
 
             font-family: var(--main-font);
             font-size: var(--text-font-size);
@@ -335,7 +306,7 @@
            ---------------------------------------- */
 
         .content-area p {
-            margin-top: 0px;
+            margin-top: 0;
             margin-bottom: 20px;
         }
 
@@ -349,9 +320,6 @@
             font-weight: var(--intro-font-weight);
             line-height: var(--intro-line-height);
             color: var(--intro-colour);
-
-            margin-top: 20px;
-            margin-bottom: 5px;
         }
 
 
@@ -380,9 +348,6 @@
             font-size: var(--tagline-font-size);
             font-weight: var(--tagline-font-weight);
             color: var(--tagline-colour);
-
-            margin-top: 0px;
-            margin-bottom: 20px;
         }
 
 
@@ -399,17 +364,15 @@
                 --text-width-percent: 100%;
 
                 --text-font-size: 20px;
-                --text-font-weight: 150;
 
                 --intro-font-size: 22px;
-                --intro-font-weight: 600;
 
                 --link-font-size: 18px;
                 --link-colour: #0077cc;
                 --link-hover-colour: #0077cc;
 
-                --tagline-font-size: 22px;
-                --tagline-font-weight: 400;
+                --tagline-font-size: 18px;
+                --tagline-font-weight: 150;
                 --tagline-colour: #777777;
 
                 --footer-text-font-size: 14px;
@@ -421,6 +384,48 @@
             .page-wrapper {
                 width: 90%;
             }
+        }
+
+
+        /* ========================================
+           DISCREET COOKIE NOTICE
+           ======================================== */
+
+        :root {
+            --cookie-notice-font-size: 14px;
+            --cookie-notice-text-colour: #999999;
+            --cookie-notice-link-colour: #999999;
+            --cookie-notice-link-hover-colour: #333333;
+            --cookie-notice-bg: transparent;
+            --cookie-notice-padding: 10px 0;
+            --cookie-notice-margin-top: 0px;
+        }
+
+        .cookie-notice {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: var(--cookie-notice-bg);
+            padding: var(--cookie-notice-padding);
+            margin-top: var(--cookie-notice-margin-top);
+            font-family: var(--main-font);
+            font-size: var(--cookie-notice-font-size);
+            color: var(--cookie-notice-text-colour);
+            text-align: left;
+        }
+
+        .cookie-notice.is-hidden {
+            display: none;
+        }
+
+        .cookie-notice a {
+            color: var(--cookie-notice-link-colour);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cookie-notice a:hover {
+            color: var(--cookie-notice-link-hover-colour);
+            text-decoration: underline;
         }
 
     </style>
@@ -504,49 +509,7 @@
                     class="banner-image"
                 >
             </a>
-           <!-- Banner 4 -->
 
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_bus_4.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-           <!-- Banner 5 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_orion_1b.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-             <!-- Banner 6 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_orion_2b.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-            
         </div>
 
 
@@ -585,16 +548,16 @@
              STATIC BANNER (bottom of page)
              ==================================== -->
 
-        <div class="banner_companies">
+        <div class="banner-static-container">
 
             <a
                 href="https://linkedin.com/in/ryantate7"
-                class="banner-static-link"
+                class="banner-companies"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 <img
-                    src="banner_companies1.jpg"
+                    src="banner_companies.jpg"
                     alt="Design project"
                     class="banner-companies-image"
                 >
@@ -613,6 +576,77 @@
 
 
     </div>
+
+
+    <!-- ====================================
+         DISCREET COOKIE NOTICE
+         ==================================== -->
+
+    <p class="cookie-notice" id="cookie-notice">
+        This site would like to count visits with Google Analytics.
+        <a href="#" id="cookie-notice-fine">Fine</a> ·
+        <a href="#" id="cookie-notice-no">No</a> ·
+        <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </p>
+
+
+    <script>
+        (function () {
+            var CONSENT_KEY = 'cookie-consent';
+            var GA_ID = 'G-ZRWDN6JM8W';
+            var notice = document.getElementById('cookie-notice');
+            var fineLink = document.getElementById('cookie-notice-fine');
+            var noLink = document.getElementById('cookie-notice-no');
+
+            function loadGoogleAnalytics() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { dataLayer.push(arguments); };
+                gtag('js', new Date());
+                gtag('config', GA_ID);
+            }
+
+            function hideNotice() {
+                notice.classList.add('is-hidden');
+            }
+
+            var existingConsent = null;
+            try {
+                existingConsent = localStorage.getItem(CONSENT_KEY);
+            } catch (e) {
+                existingConsent = null;
+            }
+
+            if (existingConsent === 'accepted') {
+                loadGoogleAnalytics();
+                hideNotice();
+            } else if (existingConsent === 'declined') {
+                hideNotice();
+            }
+            // if no choice has been made yet, the notice stays visible
+
+            fineLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    localStorage.setItem(CONSENT_KEY, 'accepted');
+                } catch (err) {}
+                loadGoogleAnalytics();
+                hideNotice();
+            });
+
+            noLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    localStorage.setItem(CONSENT_KEY, 'declined');
+                } catch (err) {}
+                hideNotice();
+            });
+        })();
+    </script>
 
 </body>
 </html>

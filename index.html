@@ -421,8 +421,8 @@
         /* ========================================
            DISCREET COOKIE NOTICE
            ======================================== */
-
-        :root {
+/*
+       :root {
             --cookie-notice-font-size: 14px;
             --cookie-notice-text-colour: #999999;
             --cookie-notice-link-colour: #999999;
@@ -457,8 +457,57 @@
         .cookie-notice a:hover {
             color: var(--cookie-notice-link-hover-colour);
             text-decoration: underline;
-        }
+        } */
+:root {
+    --cookie-notice-font-size: 14px;
+    --cookie-notice-text-colour: #777777;
+    --cookie-notice-link-colour: #777777;
+    --cookie-notice-link-hover-colour: #333333;
+    --cookie-notice-bg: #ffffff;
+    --cookie-notice-padding: 10px 15px;
+    --cookie-notice-bottom: 15px;
+}
 
+.cookie-notice {
+    position: fixed;
+    left: 50%;
+    bottom: var(--cookie-notice-bottom);
+    transform: translateX(-50%);
+
+    width: auto;
+    max-width: 90%;
+
+    box-sizing: border-box;
+    background-color: var(--cookie-notice-bg);
+    padding: var(--cookie-notice-padding);
+
+    margin: 0;
+
+    font-family: var(--main-font);
+    font-size: var(--cookie-notice-font-size);
+    color: var(--cookie-notice-text-colour);
+    text-align: center;
+
+    z-index: 1000;
+}
+
+.cookie-notice.is-hidden {
+    display: none;
+}
+
+.cookie-notice a {
+    color: var(--cookie-notice-link-colour);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cookie-notice a:hover {
+    color: var(--cookie-notice-link-hover-colour);
+    text-decoration: underline;
+}
+
+
+        
     </style>
 
 </head>

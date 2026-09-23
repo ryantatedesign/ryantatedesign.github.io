@@ -1,95 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <link rel="icon" type="image/png" href="/favicon.png">
+<head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ryan Tate Design</title>
+    <title>Privacy | Ryan Tate Design</title>
 
     <style>
 
-        /* ========================================
-           ADJUSTABLE VARIABLES
-           ======================================== */
-
         :root {
-
-            /* ------------------------------------
-               LOGO
-               ------------------------------------ */
-
-            --logo-width: 115px;
-            --logo-top-margin: 30px;
-
-
-            /* ------------------------------------
-               BANNER
-               ------------------------------------ */
-
-            --banner-max-width: 970px;
-            --banner-aspect-ratio: 970 / 474;
-            --banner-to-logo-distance: 30px;
-            --static-banner-to-previous-distance: 5px;
-
-
-            /* ------------------------------------
-               MAIN BODY TEXT
-               ------------------------------------ */
-
-            --text-width-percent: 100%;
-            --text-font-size: 24px;
-            --text-font-weight: 150;
-            --text-line-height: 1.2;
-            --text-colour: #777777;
-
-
-            /* ------------------------------------
-               FIRST / INTRODUCTORY PARAGRAPH
-               ------------------------------------ */
-
-            --intro-font-size: 28px;
-            --intro-font-weight: 600;
-            --intro-line-height: 1.0;
-            --intro-colour: #333333;
-
-
-            /* ------------------------------------
-               LINKS
-               ------------------------------------ */
-
-            --link-font-size: inherit;
-            --link-font-weight: inherit;
-            --link-colour: #0077cc;
-            --link-hover-colour: #0077cc;
-
-
-            /* ------------------------------------
-               "PRODUCT | ENVIRONMENTS | MOBILITY" LINE
-               ------------------------------------ */
-
-            --tagline-font-size: 28px;
-            --tagline-font-weight: 400;
-            --tagline-colour: #777777;
-
-
-            /* ------------------------------------
-               FOOTER TEXT LINE
-               ------------------------------------ */
-
-            --footer-text-width-percent: 100%;
-            --footer-text-font-size: 16px;
-            --footer-text-colour: #777777;
-            --footer-text-margin-top: 20px;
-            --footer-text-margin-bottom: 40px;
-
-
-            /* ------------------------------------
-               FONT
-               ------------------------------------ */
-
             --main-font:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -99,584 +20,117 @@
                 Arial,
                 sans-serif;
 
-
-            /* ------------------------------------
-               BANNER ANIMATION
-               ------------------------------------ */
-
-            --total-duration: 12s;
+            --text-colour: #333333;
+            --secondary-colour: #777777;
+            --link-colour: #0077cc;
         }
-
-
-        /* ========================================
-           PAGE
-           ======================================== */
 
         html,
         body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-            background-color: #ffffff;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
+            background: #ffffff;
         }
 
         body {
             font-family: var(--main-font);
-            display: flex;
-            justify-content: center;
-        }
-
-
-        /* ========================================
-           MAIN PAGE WRAPPER
-           ======================================== */
-
-        .page-wrapper {
-            width: 95%;
-            max-width: var(--banner-max-width);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-
-        /* ========================================
-           CLICKABLE LOGO
-           ======================================== */
-
-        .logo-link {
-            display: inline-block;
-            margin-top: var(--logo-top-margin);
-            z-index: 10;
-        }
-
-        .logo {
-            width: var(--logo-width);
-            height: auto;
-            display: block;
-        }
-
-        .logo-link:hover {
-            opacity: 0.9;
-        }
-
-
-        /* ========================================
-           FADING BANNER
-           ======================================== */
-
-        .banner-fade-container {
-            width: 100%;
-            margin-top: var(--banner-to-logo-distance);
-            aspect-ratio: var(--banner-aspect-ratio);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            animation: fade-animation var(--total-duration) infinite ease-in-out;
-        }
-
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-            display: block;
-        }
-
-
-        /* ========================================
-           BANNER TIMING
-           ======================================== */
-
-        .banner-link:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .banner-link:nth-child(2) {
-            animation-delay: 4s;
-        }
-
-        .banner-link:nth-child(3) {
-            animation-delay: 8s;
-        }
-
-
-        /* ========================================
-           FADE ANIMATION
-           ======================================== */
-
-        @keyframes fade-animation {
-
-            0% {
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            33% {
-                opacity: 1;
-            }
-
-            43% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-
-        /* ========================================
-           STATIC BANNER
-           ======================================== */
-
-        .banner-static-container {
-            width: 100%;
-            margin-top: var(--static-banner-to-previous-distance);
-            aspect-ratio: var(--banner-aspect-ratio);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-companies {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .banner-companies-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-            display: block;
-        }
-
-
-        /* ========================================
-           FOOTER TEXT LINE
-           ======================================== */
-
-        .footer-text {
-            width: var(--footer-text-width-percent);
-            margin-top: var(--footer-text-margin-top);
-            margin-bottom: var(--footer-text-margin-bottom);
-            font-family: var(--main-font);
-            font-size: var(--footer-text-font-size);
-            color: var(--footer-text-colour);
-            text-align: left;
-        }
-
-
-        /* ========================================
-           TEXT CONTENT
-           ======================================== */
-
-        .content-area {
-            width: var(--text-width-percent);
-            margin-top: 10px;
-            margin-bottom: 20px;
-
-            font-family: var(--main-font);
-            font-size: var(--text-font-size);
-            font-weight: var(--text-font-weight);
-            line-height: var(--text-line-height);
-
-            text-align: justify;
             color: var(--text-colour);
         }
 
-
-        /* ----------------------------------------
-           Paragraph spacing
-           ---------------------------------------- */
-
-        .content-area p {
-            margin-top: 20;
-            margin-bottom: 5px;
+        .privacy-page {
+            width: 90%;
+            max-width: 800px;
+            margin: 60px auto;
         }
 
-
-        /* ----------------------------------------
-           FIRST / INTRODUCTORY PARAGRAPH
-           ---------------------------------------- */
-
-      /*  .content-area .intro {
-            font-size: var(--intro-font-size);
-            font-weight: var(--intro-font-weight);
-            line-height: var(--intro-line-height);
-            color: var(--intro-colour);*/
-        
-        .content-area .intro {
-        font-size: var(--intro-font-size);
-        font-weight: var(--intro-font-weight);
-        line-height: var(--intro-line-height);
-        color: var(--intro-colour);
-
-        margin-top: 20;
-        margin-bottom: 5;
-            
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 0 30px 0;
         }
 
-       
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
 
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
 
-        /* ----------------------------------------
-           LINKS (e.g. LinkedIn link)
-           ---------------------------------------- */
-
-        .content-area a {
-            font-size: var(--link-font-size);
-            font-weight: var(--link-font-weight);
+        a {
             color: var(--link-colour);
             text-decoration: none;
         }
 
-        .content-area a:hover {
-            color: var(--link-hover-colour);
+        a:hover {
             text-decoration: underline;
         }
 
-
-        /* ----------------------------------------
-           "PRODUCT | ENVIRONMENTS | MOBILITY" LINE
-           ---------------------------------------- */
-
-      /*  .content-area .tagline {
-            font-size: var(--tagline-font-size);
-            font-weight: var(--tagline-font-weight);
-            color: var(--tagline-colour);
-        }*/
-         .content-area .tagline {
-        font-size: var(--tagline-font-size);
-        font-weight: var(--tagline-font-weight);
-        color: var(--tagline-colour);
-
-        margin-top: 0;
-        margin-bottom: 20px;
-        
-        
-        }
-
-        /* ========================================
-           MOBILE
-           ======================================== */
-
-        @media (max-width: 600px) {
-
-            :root {
-
-                --logo-width: 100px;
-
-                --text-width-percent: 100%;
-
-                --text-font-size: 20px;
-                --text-font-weight: 150;
-
-                --intro-font-size: 22px;
-                --intro-font-weight: 600;
-
-                --link-font-size: 18px;
-                --link-colour: #0077cc;
-                --link-hover-colour: #0077cc;
-
-                --tagline-font-size: 22px;
-                --tagline-font-weight: 400;
-                --tagline-colour: #777777;
-
-                --footer-text-font-size: 14px;
-                --footer-text-width-percent: 100%;
-                --footer-text-margin-top: 15px;
-                --footer-text-margin-bottom: 30px;
-            }
-
-            .page-wrapper {
-                width: 90%;
-            }
-        }
-
-
-        /* ========================================
-           DISCREET COOKIE NOTICE
-           ======================================== */
-
-        :root {
-            --cookie-notice-font-size: 14px;
-            --cookie-notice-text-colour: #999999;
-            --cookie-notice-link-colour: #999999;
-            --cookie-notice-link-hover-colour: #333333;
-            --cookie-notice-bg: D3D3D3;
-            --cookie-notice-padding: 10px 0;
-            --cookie-notice-margin-top: 0px;
-        }
-
-        .cookie-notice {
-            width: 100%;
-            box-sizing: border-box;
-            background-color: var(--cookie-notice-bg);
-            padding: var(--cookie-notice-padding);
-            margin-top: var(--cookie-notice-margin-top);
-            font-family: var(--main-font);
-            font-size: var(--cookie-notice-font-size);
-            color: var(--cookie-notice-text-colour);
-            text-align: left;
-        }
-
-        .cookie-notice.is-hidden {
-            display: none;
-        }
-
-        .cookie-notice a {
-            color: var(--cookie-notice-link-colour);
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .cookie-notice a:hover {
-            color: var(--cookie-notice-link-hover-colour);
-            text-decoration: underline;
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
         }
 
     </style>
 
 </head>
 
-
 <body>
 
-    <div class="page-wrapper">
+    <main class="privacy-page">
 
+        <h1>Privacy</h1>
 
-        <!-- ====================================
-             CLICKABLE LOGO
-             ==================================== -->
+        <p>
+            Ryan Tate Design respects your privacy.
+        </p>
 
-        <a
-            href="https://linkedin.com/in/ryantate7"
-            class="logo-link"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <img
-                src="logohr.png"
-                alt="Ryan Tate Design"
-                class="logo"
-            >
+        <h2>Google Analytics</h2>
+
+        <p>
+            This website uses Google Analytics to understand how visitors
+            use the site, such as the number of visits and general usage
+            patterns.
+        </p>
+
+        <p>
+            Google Analytics is only loaded if you select "Okay" on the
+            notice displayed on this website. If you select "No", Google
+            Analytics will not be loaded.
+        </p>
+
+        <h2>Cookies and local storage</h2>
+
+        <p>
+            This website stores your choice regarding Google Analytics
+            locally in your browser so that you are not asked again on
+            subsequent visits.
+        </p>
+
+        <h2>Contact</h2>
+
+        <p>
+            If you have any questions about privacy or how this website
+            uses information, please get in touch via
+            <a href="https://linkedin.com/in/ryantate7"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>.
+        </p>
+
+        <a href="index.html" class="back-link">
+            ← Back to Ryan Tate Design
         </a>
 
-
-        <!-- ====================================
-             FADING BANNER
-             ==================================== -->
-
-        <div class="banner-fade-container">
-
-
-            <!-- Banner 1 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_bus_1.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-
-
-            <!-- Banner 2 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_bus_2j.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-
-
-            <!-- Banner 3 -->
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_bus_3.jpg"
-                    alt="Design project"
-                    class="banner-image"
-                >
-            </a>
-
-        </div>
-
-
-        <!-- ====================================
-              CONTENT
-             ==================================== -->
-
-        <article class="content-area">
-
-
-            <!-- Introductory paragraph -->
-
-            <p class="intro">
-                Turning business ambition into results through design
-                
-            </p>
- <p class="tagline">Product | Environments | Mobility</p>
-            <!-- Main body -->
-
-            <p>
-                With over 20 years of global experience, I shape vision, build teams, and translate complex challenges into exceptional
-                products and experiences.
-            </p>
-            <p>
-                I lead with energy over ego, combining strategic thinking, creative 
-                ambition, and hands-on experience. 
-             </p>
-            <p>
-                Get in touch to explore how I can help. <a href="https://linkedin.com/in/ryantate7" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </p>
-        </article>
-
-
-        <!-- ====================================
-             STATIC BANNER (bottom of page)
-             ==================================== -->
-
-        <div class="banner-static-container">
-
-            <a
-                href="https://linkedin.com/in/ryantate7"
-                class="banner-companies"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img
-                    src="banner_companies.jpg"
-                    alt="Design project"
-                    class="banner-companies-image"
-                >
-            </a>
-
-        </div>
-
-
-        <!-- ====================================
-             FOOTER TEXT LINE
-             ==================================== -->
-
-        <p class="footer-text">
-            © ryantatedesign
-        </p>
-
-
-        <!-- ====================================
-             DISCREET COOKIE NOTICE
-             ==================================== -->
-
-        <p class="cookie-notice" id="cookie-notice">
-            This site would like to count visits with Google Analytics.
-            <a href="#" id="cookie-notice-fine">Okay</a> ·
-            <a href="#" id="cookie-notice-no">No</a> ·
-            <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
-        </p>
-
-
-    </div>
-
-
-    <script>
-        (function () {
-            var CONSENT_KEY = 'cookie-consent';
-            var GA_ID = 'G-ZRWDN6JM8W';
-            var notice = document.getElementById('cookie-notice');
-            var fineLink = document.getElementById('cookie-notice-fine');
-            var noLink = document.getElementById('cookie-notice-no');
-
-            function loadGoogleAnalytics() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-                document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = function () { dataLayer.push(arguments); };
-                gtag('js', new Date());
-                gtag('config', GA_ID);
-            }
-
-            function hideNotice() {
-                notice.classList.add('is-hidden');
-            }
-
-            var existingConsent = null;
-            try {
-                existingConsent = localStorage.getItem(CONSENT_KEY);
-            } catch (e) {
-                existingConsent = null;
-            }
-
-            if (existingConsent === 'accepted') {
-                loadGoogleAnalytics();
-                hideNotice();
-            } else if (existingConsent === 'declined') {
-                hideNotice();
-            }
-            // if no choice has been made yet, the notice stays visible
-
-            fineLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                try {
-                    localStorage.setItem(CONSENT_KEY, 'accepted');
-                } catch (err) {}
-                loadGoogleAnalytics();
-                hideNotice();
-            });
-
-            noLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                try {
-                    localStorage.setItem(CONSENT_KEY, 'declined');
-                } catch (err) {}
-                hideNotice();
-            });
-        })();
-    </script>
+    </main>
 
 </body>
+
 </html>

@@ -117,7 +117,15 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
             background-color: #ffffff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
         }
 
         body {
@@ -396,7 +404,7 @@
             --cookie-notice-text-colour: #999999;
             --cookie-notice-link-colour: #999999;
             --cookie-notice-link-hover-colour: #333333;
-            --cookie-notice-bg: D3D3D3;
+            --cookie-notice-bg: transparent;
             --cookie-notice-padding: 10px 0;
             --cookie-notice-margin-top: 0px;
         }
@@ -575,19 +583,19 @@
         </p>
 
 
+        <!-- ====================================
+             DISCREET COOKIE NOTICE
+             ==================================== -->
+
+        <p class="cookie-notice" id="cookie-notice">
+            This site would like to count visits with Google Analytics.
+            <a href="#" id="cookie-notice-fine">Fine</a> ·
+            <a href="#" id="cookie-notice-no">No</a> ·
+            <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
+        </p>
+
+
     </div>
-
-
-    <!-- ====================================
-         DISCREET COOKIE NOTICE
-         ==================================== -->
-
-    <p class="cookie-notice" id="cookie-notice">
-        This site would like to count visits with Google Analytics.
-        <a href="#" id="cookie-notice-fine">Fine</a> ·
-        <a href="#" id="cookie-notice-no">No</a> ·
-        <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
-    </p>
 
 
     <script>

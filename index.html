@@ -503,13 +503,16 @@
     --cookie-notice-text-colour: #777777;
     --cookie-notice-link-colour: #777777;
     --cookie-notice-link-hover-colour: #333333;
-    --cookie-notice-bg-rgb: 211, 211, 211;   /* background colour as R, G, B */
+
+    /* Background colour */
+    --cookie-notice-bg-rgb: 255, 255, 255;
+
+    /* Background transparency */
+    --cookie-notice-bg-opacity: 0.85;
+
     --cookie-notice-padding: 10px 15px;
     --cookie-notice-bottom: 15px;
-    --cookie-notice-bg-opacity: 0.95;        /* background only: 0 = invisible, 1 = solid */
-    --cookie-notice-opacity: 1;              /* whole notice, text included: 0 to 1 */
 
-    /* NEW: width, matching the main banner */
     --cookie-notice-width-percent: 95%;
     --cookie-notice-max-width: var(--banner-max-width);
 }
@@ -520,15 +523,15 @@
     bottom: var(--cookie-notice-bottom);
     transform: translateX(-50%);
 
-    /* CHANGED: width now matches the banner */
     width: var(--cookie-notice-width-percent);
     max-width: var(--cookie-notice-max-width);
 
     box-sizing: border-box;
 
-    /* CHANGED: this was var(--cookie-notice-bg), which doesn't exist */
-    background-color: rgba(var(--cookie-notice-bg-rgb), var(--cookie-notice-bg-opacity));
-    opacity: var(--cookie-notice-opacity);   /* NEW: applies the whole-notice transparency */
+    background-color: rgba(
+        var(--cookie-notice-bg-rgb),
+        var(--cookie-notice-bg-opacity)
+    );
 
     padding: var(--cookie-notice-padding);
     margin: 0;
@@ -539,9 +542,6 @@
     text-align: center;
 
     z-index: 1000;
-
-           .cookie-notice.is-hidden {
-    display: none;
 }
 
 .cookie-notice a {
